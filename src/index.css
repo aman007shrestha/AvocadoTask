@@ -193,3 +193,10 @@ option {
     transform: rotate(360deg);
   }
 }
+.imageDel {
+  display: flex;
+  justify-content: space-between;
+}
+.delButton {
+  cursor: pointer;
+}

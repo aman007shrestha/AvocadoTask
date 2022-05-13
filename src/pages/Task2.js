@@ -29,7 +29,6 @@ const Task2 = () => {
     }
   };
   useEffect(() => {
-    console.log('Use effect run up');
     getUsers();
   }, []);
 

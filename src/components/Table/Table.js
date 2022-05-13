@@ -1,6 +1,14 @@
 import React from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { toast } from 'react-toastify';
 
-const Table = ({ tableData }) => {
+const Table = ({ tableData, setTableData }) => {
+  const removeItem = (id) => {
+    const newPosts = tableData.filter((post) => post._id !== id);
+
+    setTableData(newPosts);
+    toast.success('delete successfull');
+  };
   return (
     <table className='table'>
       <tr>
@@ -17,7 +25,12 @@ const Table = ({ tableData }) => {
             <td>{data.name}</td>
             <td>{data.capacity}</td>
             <td>{data.status ? 'True' : 'False'}</td>
-            <td>{data.image.name}</td>
+            <td className='imageDel'>
+              <div>{data.image.name}</div>
+              <div className='delButton' onClick={() => removeItem(data._id)}>
+                <AiOutlineDelete />
+              </div>
+            </td>
           </tr>
         );
       })}

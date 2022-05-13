@@ -8,7 +8,7 @@ const Task1 = () => {
   return (
     <>
       <Form setTableData={setTableData} />
-      <Table tableData={tableData} />
+      <Table tableData={tableData} setTableData={setTableData} />
     </>
   );
 };
